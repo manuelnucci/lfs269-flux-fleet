@@ -7,7 +7,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./projects/overlays/production
+  path: ./projects/overlays/dev
   interval: 10m
   prune: true
   validation: client
