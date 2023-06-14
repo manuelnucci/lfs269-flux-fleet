@@ -1,12 +1,10 @@
----
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
   name: facebooc-deploy
   namespace: facebooc
 spec:
-  interval: 1m0s
+  url: https://github.com/lfs269/facebooc-deploy
   ref:
     branch: main
-  url: https://github.com/lfs269/facebooc-deploy
-
+  interval: 1m
