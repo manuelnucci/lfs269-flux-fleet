@@ -17,4 +17,4 @@ patches:
     patch: |-
       - op: replace
         path: /spec/path
-        value: ./flux/staging
+        value: ./flux/overlays/staging
