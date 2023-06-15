@@ -11,4 +11,4 @@ spec:
   interval: 1m
   targetNamespace: facebooc
   serviceAccountName: facebooc
-  prune: false
+  prune: true
