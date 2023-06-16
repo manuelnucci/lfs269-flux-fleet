@@ -3,14 +3,13 @@ kind: Kustomization
 namespace: flagger-system
 resources:
   - ../../base/flagger
+  - ../../base/nginx-ingress
 patches:
-  - target:
+  - path: flagger_patch.yaml
+    target:
       kind: Deployment
       name: flagger
-    patch: |-
-      - op: replace
-        path: /spec/template/spec/containers/0/args
-        value:
-          - -log-level=info
-          - -mesh-provider=nginx
-          - -metrics-server=http://flagger-prometheus:9090
+  - path: nginx_ingress_patch.yaml
+    target:
+      kind: HelmRelease
+      name: nginx-ingress

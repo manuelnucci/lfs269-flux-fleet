@@ -1,0 +1,22 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: nginx-ingress
+  namespace: flux-system
+spec:
+  values:
+    controller:
+      metrics:
+        enabled: true
+      podAnnotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "10254"
+      defaultBackend:
+        enabled: true
+      service:
+        type: NodePort
+        nodePorts:
+          http: 31080
+          https: 31443
+      admissionWebhooks:
+        enabled: false
