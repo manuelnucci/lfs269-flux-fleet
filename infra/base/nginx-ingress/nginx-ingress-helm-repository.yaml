@@ -4,5 +4,5 @@ metadata:
   name: nginx-ingress
   namespace: flagger-system
 spec:
-  url: https://kubernetes.github.io/ingress-nginx.git
+  url: https://kubernetes.github.io/ingress-nginx
   interval: 24h
