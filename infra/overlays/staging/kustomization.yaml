@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base/flagger
+patches:
+  - target:
+      kind: Deployment
+      name: flagger
+    patch: |-
+      - op: replace
+        path: /spec/template/spec/containers/0/args
+        value:
+          - -log-level=info
+          - -mesh-provider=nginx
+          - -metrics-server=http://flagger-prometheus:9090
